@@ -8,6 +8,8 @@ sudo sh get-docker.sh
 
 ### Run server:
 ```shell
+git clone https://github.com/OEM-RnD/chirpstack_docker.git
+cd chirpstack_docker
 sudo docker compose up
 ```
 
