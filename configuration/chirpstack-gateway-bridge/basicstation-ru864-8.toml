@@ -1,0 +1,71 @@
+# See https://www.chirpstack.io/gateway-bridge/install/config/ for a full
+# configuration example and documentation.
+
+# Integration configuration.
+[integration]
+marshaler="protobuf"
+
+# MQTT integration configuration.
+[integration.mqtt]
+event_topic_template="ru864/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
+state_topic_template="ru864/gateway/{{ .GatewayID }}/state/{{ .StateType }}"
+command_topic_template="ru864/gateway/{{ .GatewayID }}/command/#"
+
+# MQTT authentication.
+[integration.mqtt.auth]
+type="generic"
+[integration.mqtt.auth.generic]
+servers=["tcp://mosquitto:1883"]
+username=""
+password=""
+
+[backend]
+type="basic_station"
+
+  [backend.basic_station]
+  bind=":3001"
+  tls_cert=""
+  tls_key=""
+  ca_cert=""
+
+  region="RU864"
+  frequency_min=863000000
+  frequency_max=870000000
+
+
+  # 1st set of frequencies
+  [[backend.basic_station.concentrators]]
+    [backend.basic_station.concentrators.multi_sf]
+      frequencies = [
+        867100000,
+        867300000,
+        867500000,
+        867700000,
+        867900000,
+        868900000,
+        869100000,
+      ]
+
+      [backend.basic_station.concentrators.lora_std]
+      frequency=867500000
+      bandwidth=125000
+      spreading_factor=7
+
+  # # 2nd set of frequencies
+  # [[backend.basic_station.concentrators]]
+  # [backend.basic_station.concentrators.multi_sf]
+  #   frequencies = [
+  #     864100000,
+  #     864300000,
+  #     864500000,
+  #     864700000,
+  #     864900000,
+  #     866100000,
+  #     866300000,
+  #     866500000,
+  #   ]
+
+  #   [backend.basic_station.concentrators.lora_std]
+  #   frequency=864500000
+  #   bandwidth=125000
+  #   spreading_factor=7
