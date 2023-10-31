@@ -4,13 +4,15 @@
 ```shell
 wget -O get-docker.sh https://get.docker.com
 sudo sh get-docker.sh
+sudo usermod -aG docker ${USER}
+newgrp docker
 ```
 
 ### Run server:
 ```shell
 git clone https://github.com/OEM-RnD/chirpstack_docker.git
 cd chirpstack_docker
-sudo docker compose up
+docker compose up
 ```
 
 ### Server ports:
