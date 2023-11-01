@@ -37,11 +37,11 @@ type="basic_station"
   [[backend.basic_station.concentrators]]
     [backend.basic_station.concentrators.multi_sf]
       frequencies = [
-        867100000,
-        867300000,
-        867500000,
-        867700000,
-        867900000,
+        864100000,
+        864300000,
+        864500000,
+        864700000,
+        864900000,
         868900000,
         869100000,
       ]
@@ -55,11 +55,11 @@ type="basic_station"
   # [[backend.basic_station.concentrators]]
   # [backend.basic_station.concentrators.multi_sf]
   #   frequencies = [
-  #     864100000,
-  #     864300000,
-  #     864500000,
-  #     864700000,
-  #     864900000,
+  #     867100000,
+  #     867300000,
+  #     867500000,
+  #     867700000,
+  #     867900000,
   #     866100000,
   #     866300000,
   #     866500000,
