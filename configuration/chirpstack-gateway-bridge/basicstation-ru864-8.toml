@@ -47,7 +47,7 @@ type="basic_station"
       ]
 
       [backend.basic_station.concentrators.lora_std]
-      frequency=867500000
+      frequency=864500000
       bandwidth=125000
       spreading_factor=7
 
@@ -66,6 +66,6 @@ type="basic_station"
   #   ]
 
   #   [backend.basic_station.concentrators.lora_std]
-  #   frequency=864500000
+  #   frequency=867500000
   #   bandwidth=125000
   #   spreading_factor=7
